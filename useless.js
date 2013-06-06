@@ -4,13 +4,7 @@
     },
     u = {
         query: function () {
-            nodes = document.querySelectorAll(arguments[0]);
-            if (nodes.length === 1) {
-                return nodes[0];
-            }
-            else {
-                return nodes;
-            }
+            return document.querySelectorAll(arguments[0]);
         },
         forEach: function () { return _arrayCall("forEach", arguments); },
         splice: function () { return _arrayCall("splice", arguments); },
@@ -21,9 +15,9 @@
         reduceRight: function () { return _arrayCall("reduceRight", arguments); },
         map: function () { return _arrayCall("map", arguments); },
         every: function () { return _arrayCall("every", arguments); },
-        some: function () { return _arrayCall("some", arguments); }
-        indexOf: function () { return _arrayCall("indexOf", arguments); }
-        lastIndexOf: function () { return _arrayCall("lastIndexOf", arguments); }
+        some: function () { return _arrayCall("some", arguments); },
+        indexOf: function () { return _arrayCall("indexOf", arguments); },
+        lastIndexOf: function () { return _arrayCall("lastIndexOf", arguments); },
         slice: function () { return _arrayCall("slice", arguments); },
         join: function () { return _arrayCall("join", arguments); },
         concat: function () { return _arrayCall("concat", arguments); },
