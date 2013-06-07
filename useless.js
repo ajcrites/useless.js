@@ -6,23 +6,13 @@
         query: function () {
             return document.querySelectorAll(arguments[0]);
         },
-        forEach: function () { return _arrayCall("forEach", arguments); },
-        splice: function () { return _arrayCall("splice", arguments); },
-        reverse: function () { return _arrayCall("reverse", arguments); },
-        shift: function () { return _arrayCall("shift", arguments); },
-        unshift: function () { return _arrayCall("unshift", arguments); },
-        reduce: function () { return _arrayCall("reduce", arguments); },
-        reduceRight: function () { return _arrayCall("reduceRight", arguments); },
-        map: function () { return _arrayCall("map", arguments); },
-        every: function () { return _arrayCall("every", arguments); },
-        some: function () { return _arrayCall("some", arguments); },
-        indexOf: function () { return _arrayCall("indexOf", arguments); },
-        lastIndexOf: function () { return _arrayCall("lastIndexOf", arguments); },
-        slice: function () { return _arrayCall("slice", arguments); },
-        join: function () { return _arrayCall("join", arguments); },
-        concat: function () { return _arrayCall("concat", arguments); },
     };
     u.q = u.query;
+    ["forEach", "splice", "reverse", "shift", "unshift", "reduce",
+    "reduceRight", "map", "every", "some", "indexOf", "lastIndexOf",
+    "slice", "join", "concat"].forEach(function (fun) {
+        u[fun] = function () { _arrayCall(fun, arguments); };
+    });
 
     window.u = u;
 })(window, document, Array);
